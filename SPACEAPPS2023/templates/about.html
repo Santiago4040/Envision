@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>About us</title>
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+  </head>
+
+  <body>
+    {% extends "template.html" %}
+    {% block content %}
+    
+    <h1 style="margin: 50px;"> About us </h1>
+    <p style="margin: 50px;">
+          We are the Space Mammoths. We love science, space and technology. Our focus is to advance and discover new forms of visualizing the surroundings of space and the cosmos. We are excited to come forward and revolutionize in those fields that accomodate our desires, planning to expand and innovate using sounds as our guide in the vast emptiness. Our skillset consists of programming, communication, affinity for numbers, amongst other things.
+    </p>
+
+    <h1 style="margin: 50px;">Methodology</h1>
+    <p style="margin: 50px;">We take an image (either from a frame of a video or an image file) and insert a 1 pixel wide row starting from the left, then fetch the individual pixel data and convert its data from RGB values to HSV values which we store 1 of these components into an array of the same length as the height of the source image.
+
+      After this we transform the array using the Inverse Fourier Transform provided by the numpy library (NumPy, n.d.), which interprets the data in the frequency domain, meaning a set of frequencies defined by the index of each element whose value controls the amplitude Figure 3, these pure tones are mixed to create audio samples in the spatial domain that will get appended into a buffer to hold the generated data.
+      
+      We repeat this process for every row left in the image and we export the buffer into an audio file that can be read by any multimedia player or enhanced by an audio editor.</p>
+
+      <img src="{{url_for('static', filename='imgnr.jpg')}}" width="400" height="300" style="margin: 50px;" >
+      <br>
+      <img src="{{url_for('static', filename='imgsp.jpg')}}" width="400" height="300" style="margin: 50px;" >
+    {% endblock %}
+  </body>
+</html>

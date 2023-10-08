@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <title>Results</title>
+    </head>
+
+  <body>
+    {% extends "template.html" %}
+    {% block content %}
+    
+    <h1 style="margin: 50px;"> Your file has been converted! </h1>
+
+
+    <p style="margin: 50px;">
+    <img id="usr_img" src="" width="500">
+    </p>
+
+    <p>
+    <audio style="margin-left: 50px;" controls>   
+        <source src="{{url_for('static', filename='out.wav')}}" type="audio/wav">
+    </audio>
+    </p>
+
+    <input style="margin: 50px;" type="button" onclick="location.href='live_demo'" value="Upload another photo">
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var queryString = window.location.search;
+        var urlParams = new URLSearchParams(queryString);
+        var imageParam = urlParams.get("image");
+
+        var usr_img = document.getElementById("usr_img");
+        var usr_img_src = `static/${imageParam}`;
+        var defaultImage = "{{url_for('static', filename='envisionlogo.jpg')}}";
+
+        console.log(usr_img_src)
+
+        if(imageParam)usr_img.src = usr_img_src;
+        else usr_img.src = defaultImage;
+    });
+    </script>
+    
+    {% endblock %}
+  </body>
+</html>

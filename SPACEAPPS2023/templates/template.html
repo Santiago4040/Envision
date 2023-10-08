@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Envision</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/template.css') }}">
+</head>
+  <body>
+    <header>
+      <img src="{{url_for('static', filename='envisionlogo.jpg')}}" width="100" height="100" margin: 20px >
+      <div class="container">
+        <h1 class="logo" style="margin-bottom: 10px;">Envision</h1>
+        <strong><nav>
+          <ul class="menu">
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('live_demo') }}">Live Demo</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></sli>  
+          </ul>
+        </nav></strong>
+      </div>
+    </header>
+    
+{% block content %}
+{% endblock %}
+
+ </body>
+</html>

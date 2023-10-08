@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <title>Envision</title>
+    <style>
+      main {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .body-replacement {
+            font-family: 'Arial', sans-serif;
+            background-color: #0c0c0c; 
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .video-card {
+            background-color: #222;
+            border: 1px solid #333;
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 10px;
+            width: 600px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .video-card:hover {
+            transform: scale(1.05);
+        }
+
+        .video-card img {
+            width: 80%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+    </style>
+
+    </style>
+  </head>
+
+  <body>
+    {% extends "template.html" %}
+    {% block content %}
+
+      <h1 style="margin: 50px;">Welcome to Envision, a new way to experience the universe</h1>
+      <p style="margin: 50px;">Check out how the space sounds:</p>
+      <main>
+        <div class="video-card">
+          <video src="{{url_for('static', filename='video1.mp4')}}" type="audio/mpeg" alt="A Flight to HCG 40" controls="controls">
+        </div>
+
+        <div class="video-card">
+          <video src="{{url_for('static', filename='video2.mp4')}}" type="audio/mpeg" alt="A Flight to HCG 40" controls="controls">
+        </div>
+
+        <div class="video-card">
+          <video src="{{url_for('static', filename='video3.mp4')}}" type="audio/mpeg" alt="A Flight to HCG 40" controls="controls">
+        </div>
+      </main>
+  
+    {% endblock %}
+  </body>
+</html>

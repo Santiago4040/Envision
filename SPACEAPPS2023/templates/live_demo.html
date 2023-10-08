@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Live Demo</title>
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+  </head>
+
+  <body>
+    {% extends "template.html" %}
+    {% block content %}
+
+    <h1 style="margin: 50px;">Upload an image:</h1>
+    
+    <form style="margin: 50px;" method=post enctype=multipart/form-data>
+      <input type=file name=file accept="image/png, image/jpeg">
+      <input type=submit value=Upload onclick="location.href='results'">
+    </form>
+
+    {% endblock %}
+  </body>
+</html>
